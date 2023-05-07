@@ -1,21 +1,18 @@
-import { config } from "dotenv";
 import express, { json } from "express";
 import cors from "cors";
-import { connect } from "mongoose";
-import airbnbRoutes from "./routes/AirBnbRoute.js";
+import './loadEnvironment.js'
+import routes from "./routes/index.js";
 
-config()
-
-const app = express()
 const port = process.env.PORT || 3000
-const databaseUri = process.env.DATABASE_URI
+const app = express()
 
-app.use(json())
+/* Configuration */
 app.use(cors())
-app.use('/api', airbnbRoutes)
+app.use(json())
 
-connect(databaseUri)
-.then(() => console.log(`Connected to MongoDB Database`))
-.catch(error => console.error(error))
+/* Routes */
+app.use('/api', routes)
 
-app.listen(port, () => console.log(`Listening in ${port}`))
+app.listen(port, () => {
+    console.log(`Server running on ${port}`)
+})
