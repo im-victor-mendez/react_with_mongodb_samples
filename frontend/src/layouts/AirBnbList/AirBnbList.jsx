@@ -1,3 +1,4 @@
+import './AirBnbList.scss'
 import { useEffect, useState } from "react"
 import { getPageAirBnb } from "../../api/airbnb"
 import AirBnb from "../../components/AirBnb/AirBnb"
@@ -39,7 +40,10 @@ function AirBnbList() {
             neighborhood_overview, notes, number_of_reviews, price, property_type, review_scores,
             reviews, room_type, security_deposit, space, summary, transit} = item
 
+            const { street } = address
+
             return <AirBnb key={_id}
+                street={street}
                 listing_url={listing_url}
                 name={name}
                 property_type={property_type}

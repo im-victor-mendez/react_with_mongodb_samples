@@ -1,0 +1,15 @@
+@import url(./sass/colors.scss);
+@import url(./sass/fonts.scss);
+@import url(./sass/styles.scss);
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+#root {
+    margin: 0 auto;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}

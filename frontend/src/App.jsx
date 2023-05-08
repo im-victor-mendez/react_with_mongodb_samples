@@ -1,3 +1,4 @@
+import './App.scss'
 import { Route, Routes } from "react-router-dom"
 import NavBar from "./layouts/NavBar/NavBar"
 import AirBnb from "./pages/AirBnb/AirBnb"
