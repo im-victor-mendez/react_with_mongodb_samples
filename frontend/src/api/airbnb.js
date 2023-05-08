@@ -6,8 +6,8 @@ export async function getAllAirBnb() {
     return data
 }
 
-export async function getLimitedAirBnb(limit) {
-    const urlLimited = `${url}?limit=${limit}`
+export async function getPageAirBnb(page = 1) {
+    const urlLimited = `${url}?page=${page}`
     const response = await fetch(urlLimited)
     const data = await response.json()
     return data

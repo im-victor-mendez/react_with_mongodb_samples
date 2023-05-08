@@ -1,22 +1,36 @@
 import { useEffect, useState } from "react"
-import { getLimitedAirBnb } from "../../api/airbnb"
+import { getPageAirBnb } from "../../api/airbnb"
 import AirBnb from "../../components/AirBnb/AirBnb"
 
 function AirBnbList() {
     const [list, setList] = useState([])
-    const [limit, setLimit] = useState(10)
+    const [page, setPage] = useState(1)
 
     useEffect(() => {
-        getLimitedAirBnb(limit)
+        getPageAirBnb(page)
         .then(
             data => {
                 setList(data)
             }
         )
-    }, [limit])
+    }, [page])
+
+    function reducer() {
+        if (page > 1)
+        setPage(previous => previous - 1)
+    }
+
+    function adder() {
+        setPage(previous => previous + 1)
+    }
 
     return (
     <section id="airbnb-list">
+        <div id="page-selector">
+            <button onClick={reducer}>-</button>
+            {page}
+            <button onClick={adder}>+</button>
+        </div>
         {list.map(item => {
             const { _id, access, accommodates, address, amenities, availability, bathrooms, bed_type,
             bedrooms, beds, calendar_last_scraped, cancellation_policy, cleaning_fee, description,
