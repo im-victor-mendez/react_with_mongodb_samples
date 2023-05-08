@@ -4,12 +4,6 @@ const databaseUrl = process.env.DATABASE_URL
 
 const client = new MongoClient(databaseUrl)
 
-let connection
-
-try {
-    connection = await client.connect()
-} catch (error) {
-    console.error(error)
-}
+const connection = await client.connect()
 
 export default connection
