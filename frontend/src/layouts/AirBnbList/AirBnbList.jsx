@@ -27,11 +27,14 @@ function AirBnbList() {
 
     return (
     <section id="airbnb-list">
-        <div id="page-selector">
-            <button onClick={reducer}>-</button>
-            {page}
-            <button onClick={adder}>+</button>
-        </div>
+        <header id='airbnb-header'>
+            <h1>AirBnb List</h1>
+            <div id="page-selector">
+                <button onClick={reducer}>-</button>
+                {page}
+                <button onClick={adder}>+</button>
+            </div>
+        </header>
         {list.map(item => {
             const { _id, access, accommodates, address, amenities, availability, bathrooms, bed_type,
             bedrooms, beds, calendar_last_scraped, cancellation_policy, cleaning_fee, description,
