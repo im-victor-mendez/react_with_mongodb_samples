@@ -1,0 +1,27 @@
+#navbar {
+    background-color: var(--very-light-yellow);
+    
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    border-radius: 0rem 0rem 1rem 1rem;
+    padding: 1rem;
+
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.nav-link {
+    color: var(--very-dark-purple);
+
+    border-radius: 1rem;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.active,
+.nav-link:hover {
+    background-color: var(--peach);
+    color: var(--very-light-orange);
+}
