@@ -1,0 +1,17 @@
+#airbnb-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0rem 2rem;
+
+    button {
+        background-color: var(--light-pink);
+        border-radius: var(--border-radius);
+
+        &:hover {
+            background-color: var(--strong-pink);
+            color: white;
+        }
+    }
+}
