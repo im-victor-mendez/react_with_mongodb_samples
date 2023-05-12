@@ -4,14 +4,14 @@ import AnalyticsPaths, { AnalyticsNavPaths } from "../../constants/AnalyticsPath
 import Customers from "../../layouts/Customers/Customers"
 
 function Analytics() {
-    const { accounts, customers, transactions } = AnalyticsPaths
+    const { customers } = AnalyticsPaths
     
     return (
         <article id="analytics">
             <NavBar links={AnalyticsNavPaths} />
             <Routes>
                 {/* <Route path={accounts} element={<Accounts />} /> */}
-                <Route path={customers} element={<Customers />} />
+                <Route exact path={customers} element={<Customers />} />
                 {/* <Route path={transactions} element={<Transactions />} /> */}
             </Routes>
         </article>
