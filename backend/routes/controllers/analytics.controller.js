@@ -55,7 +55,7 @@ export async function getAnalyticsCustomers(req, res) {
     if (email === undefined) delete filter.email
 
     const customersCollection = await db.collection('customers')
-    const cursor = await customersCollection.find(filter).limit(pageSize).toArray()
+    const cursor = await customersCollection.find(filter).skip(skip).limit(pageSize).toArray()
 
     res.send(cursor)
 }
