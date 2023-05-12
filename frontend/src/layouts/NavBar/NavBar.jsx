@@ -1,11 +1,10 @@
 import './NavBar.scss'
 import { NavLink } from "react-router-dom"
-import NavButtons from './NavButtons'
 
-function NavBar() {
+function NavBar({ links }) {
   return (
     <nav id="navbar">
-      {NavButtons.map(
+      {links.map(
         button => {
           const { name, to } = button
 
